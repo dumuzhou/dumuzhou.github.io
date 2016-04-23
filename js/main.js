@@ -106,5 +106,10 @@ require([], function (){
 	if(yiliaConfig.open_in_new == true){
 		$(".article a[href]").attr("target", "_blank")
 	}
+	$('.highlight').each(function(){
+		if($(this).hasClass('bash')){
+			$('.bash .gutter .line').html('$');
+		}
+	});
 	
 });
