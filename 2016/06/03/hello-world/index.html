@@ -17,7 +17,7 @@
 设置用户权限: vim /svn/co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu搭建svn服务">
-<meta property="og:url" content="http://yoursite.com/2016/05/27/hello-world/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/06/03/hello-world/index.html">
 <meta property="og:site_name" content="分享互联网">
 <meta property="og:description" content="安装
 1apt-get install -y subversion
@@ -28,7 +28,7 @@
 创建用户和密码:vim /svn/conf/passwd
 1234[users]# harry = harryssecret# sally = sallyssecretuser = admin
 设置用户权限: vim /svn/co">
-<meta property="og:updated_time" content="2016-04-05T05:29:27.000Z">
+<meta property="og:updated_time" content="2016-06-03T08:34:51.840Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu搭建svn服务">
 <meta name="twitter:description" content="安装
@@ -200,8 +200,8 @@
       <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/27/hello-world/" class="article-date">
-  	<time datetime="2016-05-27T02:29:44.358Z" itemprop="datePublished">2016-05-27</time>
+      <a href="/2016/06/03/hello-world/" class="article-date">
+  	<time datetime="2016-06-03T08:34:51.848Z" itemprop="datePublished">2016-06-03</time>
 </a>
     </div>
   
@@ -245,11 +245,13 @@
 <p>设置用户权限: vim /svn/conf/authz</p>
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># [/foo/bar]</span></span><br><span class="line"><span class="comment"># harry = rw</span></span><br><span class="line"><span class="comment"># &amp;joe = r</span></span><br><span class="line"><span class="comment"># * =</span></span><br><span class="line">[<span class="regexp">/]</span><br><span class="line">user=rw</span></span><br></pre></td></tr></table></figure>
 <p>设置访问权限: vim /svn/conf/svnserve.conf</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">anon-access = none  <span class="comment">###改为 none</span></span><br><span class="line">auth-access = <span class="keyword">write</span>  <span class="comment">###开启</span></span><br><span class="line"><span class="comment">### The password-db option controls the location of the password</span></span><br><span class="line"><span class="comment">### database file.  Unless you specify a path starting with a /,</span></span><br><span class="line"><span class="comment">### the file's location is relative to the directory containing</span></span><br><span class="line"><span class="comment">### this configuration file.</span></span><br><span class="line"><span class="comment">### If SASL is enabled (see below), this file will NOT be used.</span></span><br><span class="line"><span class="comment">### Uncomment the line below to use the default password file.</span></span><br><span class="line">password-db = passwd <span class="comment">###开启</span></span><br><span class="line"><span class="comment">### The authz-db option controls the location of the authorization</span></span><br><span class="line"><span class="comment">### rules for path-based access control.  Unless you specify a path</span></span><br><span class="line"><span class="comment">### starting with a /, the file's location is relative to the</span></span><br><span class="line"><span class="comment">### directory containing this file.  The specified path may be a</span></span><br><span class="line"><span class="comment">### repository relative URL (^/) or an absolute file:// URL to a text</span></span><br><span class="line"><span class="comment">### file in a Subversion repository.  If you don't specify an authz-db,</span></span><br><span class="line"><span class="comment">### no path-based access control is done.</span></span><br><span class="line"><span class="comment">### Uncomment the line below to use the default authorization file.</span></span><br><span class="line">authz-db = authz  <span class="comment">###开启</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">anon-access = none  <span class="comment"># 改为 none</span></span><br><span class="line">auth-access = <span class="keyword">write</span>  <span class="comment"># 开启</span></span><br><span class="line"><span class="comment">### The password-db option controls the location of the password</span></span><br><span class="line"><span class="comment">### database file.  Unless you specify a path starting with a /,</span></span><br><span class="line"><span class="comment">### the file's location is relative to the directory containing</span></span><br><span class="line"><span class="comment">### this configuration file.</span></span><br><span class="line"><span class="comment">### If SASL is enabled (see below), this file will NOT be used.</span></span><br><span class="line"><span class="comment">### Uncomment the line below to use the default password file.</span></span><br><span class="line">password-db = passwd <span class="comment"># 开启</span></span><br><span class="line"><span class="comment">### The authz-db option controls the location of the authorization</span></span><br><span class="line"><span class="comment">### rules for path-based access control.  Unless you specify a path</span></span><br><span class="line"><span class="comment">### starting with a /, the file's location is relative to the</span></span><br><span class="line"><span class="comment">### directory containing this file.  The specified path may be a</span></span><br><span class="line"><span class="comment">### repository relative URL (^/) or an absolute file:// URL to a text</span></span><br><span class="line"><span class="comment">### file in a Subversion repository.  If you don't specify an authz-db,</span></span><br><span class="line"><span class="comment">### no path-based access control is done.</span></span><br><span class="line"><span class="comment">### Uncomment the line below to use the default authorization file.</span></span><br><span class="line">authz-db = authz  <span class="comment"># 开启</span></span><br></pre></td></tr></table></figure>
 <p>启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svnserve <span class="_">-d</span> -r /svn  默认端口：3690</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svnserve <span class="_">-d</span> -r /svn  <span class="comment"># 默认端口：3690</span></span><br></pre></td></tr></table></figure>
 <p>测试</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn co svn://127.0.0.1  //输入账号密码提示取出版本0说明成功搭建</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn co svn://127.0.0.1  <span class="comment"># 输入账号密码提示取出版本0说明成功搭建</span></span><br></pre></td></tr></table></figure>
+<p>停止</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall svnserve</span><br></pre></td></tr></table></figure>
 <p>添加到开机启动: vim /etc/rc.local</p>
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svnserve -d -r /svn</span><br><span class="line"><span class="keyword">exit</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
@@ -288,7 +290,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hello-world" data-title="ubuntu搭建svn服务" data-url="http://yoursite.com/2016/05/27/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="hello-world" data-title="ubuntu搭建svn服务" data-url="http://yoursite.com/2016/06/03/hello-world/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
