@@ -106,7 +106,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/tools/" style="font-size: 10px;">tools</a>
+						<a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/js-RegExp/" style="font-size: 10px;">js RegExp</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a>
 					</div>
 				</section>
 				
@@ -174,11 +174,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-javascript-url" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/03/hello-world/" class="article-date">
-  	<time datetime="2016-06-03T08:34:51.848Z" itemprop="datePublished">2016-06-03</time>
+      <a href="/2016/07/12/javascript-url/" class="article-date">
+  	<time datetime="2016-07-12T08:37:58.765Z" itemprop="datePublished">2016-07-12</time>
 </a>
     </div>
   
@@ -191,7 +191,128 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/03/hello-world/">ubuntu搭建svn服务</a>
+      <a class="article-title" href="/2016/07/12/javascript-url/">javascript用正则表达式解析ulr值</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = <span class="string">'http://dumuzhou.github.io/index.html?name=dy&amp;age=26#comment'</span>;</span><br><span class="line"><span class="keyword">var</span> arr = url.match(<span class="regexp">/(https?:)\/\/([^\/]+)(\/[^\?]*)?(\?[^#]*)?(#.*)?/</span>);</span><br><span class="line"><span class="keyword">var</span> protocol = arr[<span class="number">1</span>];  <span class="comment">// 协议 </span></span><br><span class="line"><span class="keyword">var</span> host = arr[<span class="number">2</span>];      <span class="comment">// 主机</span></span><br><span class="line"><span class="keyword">var</span> pathname = arr[<span class="number">3</span>];  <span class="comment">// 路径</span></span><br><span class="line"><span class="keyword">var</span> search = arr[<span class="number">4</span>];    <span class="comment">// 查询</span></span><br><span class="line"><span class="keyword">var</span> hash = arr[<span class="number">5</span>];      <span class="comment">// 哈希值</span></span><br><span class="line"><span class="comment">// 获取查询参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUrlHref</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(search)&#123;</span><br><span class="line">		<span class="keyword">var</span> str=search.replace(<span class="string">"?"</span>,<span class="string">""</span>);</span><br><span class="line">		<span class="keyword">var</span> oArr=str.split(<span class="string">"&amp;"</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> a <span class="keyword">in</span> oArr)&#123;</span><br><span class="line">			<span class="keyword">var</span> s=oArr[a].split(<span class="string">"="</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[<span class="number">0</span>]==x)&#123;</span><br><span class="line">				<span class="keyword">return</span> s[<span class="number">1</span>];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getUrlHref(<span class="string">"age"</span>));</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-RegExp/">js RegExp</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-javascript-type" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/12/javascript-type/" class="article-date">
+  	<time datetime="2016-07-12T07:52:37.011Z" itemprop="datePublished">2016-07-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/12/javascript-type/">javascript中的基本数据类型</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><blockquote>
+<p>number,string,boolean,null,undefined</p>
+</blockquote>
+<p>类型检测</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">1</span>         <span class="comment">// number</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">"1"</span>       <span class="comment">// string</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span>      <span class="comment">// boolean</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>      <span class="comment">// object</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/12/javascript-type/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/12/hello-world/" class="article-date">
+  	<time datetime="2016-07-12T06:31:01.828Z" itemprop="datePublished">2016-07-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/12/hello-world/">ubuntu搭建svn服务</a>
     </h1>
   
 
@@ -206,21 +327,6 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /svn</span><br></pre></td></tr></table></figure>
 <p>创建一个新的空版本库</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svnadmin create /svn</span><br></pre></td></tr></table></figure>
-<p>创建用户和密码:vim /svn/conf/passwd</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[users]</span><br><span class="line"><span class="comment"># harry = harryssecret</span></span><br><span class="line"><span class="comment"># sally = sallyssecret</span></span><br><span class="line">user = admin</span><br></pre></td></tr></table></figure>
-<p>设置用户权限: vim /svn/conf/authz</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># [/foo/bar]</span></span><br><span class="line"><span class="comment"># harry = rw</span></span><br><span class="line"><span class="comment"># &amp;joe = r</span></span><br><span class="line"><span class="comment"># * =</span></span><br><span class="line">[<span class="regexp">/]</span><br><span class="line">user=rw</span></span><br></pre></td></tr></table></figure>
-<p>设置访问权限: vim /svn/conf/svnserve.conf</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">anon-access = none  <span class="comment"># 改为 none</span></span><br><span class="line">auth-access = <span class="keyword">write</span>  <span class="comment"># 开启</span></span><br><span class="line"><span class="comment">### The password-db option controls the location of the password</span></span><br><span class="line"><span class="comment">### database file.  Unless you specify a path starting with a /,</span></span><br><span class="line"><span class="comment">### the file's location is relative to the directory containing</span></span><br><span class="line"><span class="comment">### this configuration file.</span></span><br><span class="line"><span class="comment">### If SASL is enabled (see below), this file will NOT be used.</span></span><br><span class="line"><span class="comment">### Uncomment the line below to use the default password file.</span></span><br><span class="line">password-db = passwd <span class="comment"># 开启</span></span><br><span class="line"><span class="comment">### The authz-db option controls the location of the authorization</span></span><br><span class="line"><span class="comment">### rules for path-based access control.  Unless you specify a path</span></span><br><span class="line"><span class="comment">### starting with a /, the file's location is relative to the</span></span><br><span class="line"><span class="comment">### directory containing this file.  The specified path may be a</span></span><br><span class="line"><span class="comment">### repository relative URL (^/) or an absolute file:// URL to a text</span></span><br><span class="line"><span class="comment">### file in a Subversion repository.  If you don't specify an authz-db,</span></span><br><span class="line"><span class="comment">### no path-based access control is done.</span></span><br><span class="line"><span class="comment">### Uncomment the line below to use the default authorization file.</span></span><br><span class="line">authz-db = authz  <span class="comment"># 开启</span></span><br></pre></td></tr></table></figure>
-<p>启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svnserve <span class="_">-d</span> -r /svn  <span class="comment"># 默认端口：3690</span></span><br></pre></td></tr></table></figure>
-<p>测试</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn co svn://127.0.0.1  <span class="comment"># 输入账号密码提示取出版本0说明成功搭建</span></span><br></pre></td></tr></table></figure>
-<p>停止</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall svnserve</span><br></pre></td></tr></table></figure>
-<p>添加到开机启动: vim /etc/rc.local</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svnserve -d -r /svn</span><br><span class="line"><span class="keyword">exit</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
-
       
     </div>
     
@@ -233,6 +339,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/12/hello-world/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

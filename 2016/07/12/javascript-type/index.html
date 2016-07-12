@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>分享互联网</title>
+  <title>javascript中的基本数据类型 | 分享互联网</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="layout: tagstitle: tags">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分享互联网">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="基本数据类型
+number,string,boolean,null,undefined
+
+类型检测
+12345typeof 1         // numbertypeof &quot;1&quot;       // stringtypeof true      // booleantypeof null      // objecttypeof undefined // undefined">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript中的基本数据类型">
+<meta property="og:url" content="http://yoursite.com/2016/07/12/javascript-type/index.html">
 <meta property="og:site_name" content="分享互联网">
-<meta property="og:description" content="layout: tagstitle: tags">
-<meta property="og:updated_time" content="2016-04-21T11:19:38.000Z">
+<meta property="og:description" content="基本数据类型
+number,string,boolean,null,undefined
+
+类型检测
+12345typeof 1         // numbertypeof &quot;1&quot;       // stringtypeof true      // booleantypeof null      // objecttypeof undefined // undefined">
+<meta property="og:updated_time" content="2016-07-12T07:52:37.011Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分享互联网">
-<meta name="twitter:description" content="layout: tagstitle: tags">
+<meta name="twitter:title" content="javascript中的基本数据类型">
+<meta name="twitter:description" content="基本数据类型
+number,string,boolean,null,undefined
+
+类型检测
+12345typeof 1         // numbertypeof &quot;1&quot;       // stringtypeof true      // booleantypeof null      // objecttypeof undefined // undefined">
   
     <link rel="alternative" href="/atom.xml" title="分享互联网" type="application/atom+xml">
   
@@ -173,11 +185,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-javascript-type" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-  	<time datetime="2016-05-27T02:29:08.087Z" itemprop="datePublished">2016-05-27</time>
+      <a href="/2016/07/12/javascript-type/" class="article-date">
+  	<time datetime="2016-07-12T07:52:37.011Z" itemprop="datePublished">2016-07-12</time>
 </a>
     </div>
   
@@ -186,9 +198,42 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript中的基本数据类型
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>layout: tags<br>title: tags</p>
+        <h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><blockquote>
+<p>number,string,boolean,null,undefined</p>
+</blockquote>
+<p>类型检测</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">1</span>         <span class="comment">// number</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">"1"</span>       <span class="comment">// string</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span>      <span class="comment">// boolean</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>      <span class="comment">// object</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h2><blockquote>
+<p>Number,String,Boolean,Array,Date,Function,RegExp,Object…</p>
+</blockquote>
+<p>引用数据类型检测</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o=&#123;a:<span class="number">1</span>,b:<span class="number">2</span>&#125;;</span><br><span class="line">o <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// true 判断是否是某个对象的实例</span></span><br><span class="line"><span class="string">"a"</span> <span class="keyword">in</span> o            <span class="comment">// true 判断对象是否含有某个属性</span></span><br><span class="line">o.constructor       <span class="comment">//  查看构造函数</span></span><br></pre></td></tr></table></figure>
+<h2 id="判断所有数据类型的方法"><a href="#判断所有数据类型的方法" class="headerlink" title="判断所有数据类型的方法"></a>判断所有数据类型的方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getType</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">	    <span class="keyword">return</span> (obj===<span class="literal">undefined</span>||obj===<span class="literal">null</span>)?obj:(obj.constructor&amp;&amp;obj.constructor.toString().match(<span class="regexp">/function\s*([^(]*)/</span>)[<span class="number">1</span>]).toLowerCase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -196,6 +241,25 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/07/12/javascript-url/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          javascript用正则表达式解析ulr值
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ubuntu搭建svn服务</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -225,7 +289,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="" data-url="http://yoursite.com/tags/index.html"></div>
+	<div class="ds-thread" data-thread-key="javascript-type" data-title="javascript中的基本数据类型" data-url="http://yoursite.com/2016/07/12/javascript-type/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -269,7 +333,7 @@
 		mathjax: true,
 		animate: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
