@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>javascript用正则表达式解析ulr值 | 分享互联网</title>
+  <title>css之flex弹性布局 | 分享互联网</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567891011121314151617181920var url = &apos;http://dumuzhou.github.io/index.html?name=dy&amp;amp;age=26#comment&apos;;var arr = url.match(/(https?:)\/\/([^\/]+)(\/[^\?]*)?(\?[^#]*)?(#.*)?/);var protocol = arr[1]">
+  <meta name="description" content="弹性容器1display: flex;
+弹性元素1父级为display: flex 且在文档流中的元素">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript用正则表达式解析ulr值">
-<meta property="og:url" content="http://yoursite.com/2016/07/15/javascript-url/index.html">
+<meta property="og:title" content="css之flex弹性布局">
+<meta property="og:url" content="http://yoursite.com/2016/07/18/css3-flex/index.html">
 <meta property="og:site_name" content="分享互联网">
-<meta property="og:description" content="1234567891011121314151617181920var url = &apos;http://dumuzhou.github.io/index.html?name=dy&amp;amp;age=26#comment&apos;;var arr = url.match(/(https?:)\/\/([^\/]+)(\/[^\?]*)?(\?[^#]*)?(#.*)?/);var protocol = arr[1]">
-<meta property="og:updated_time" content="2016-07-15T07:50:12.213Z">
+<meta property="og:description" content="弹性容器1display: flex;
+弹性元素1父级为display: flex 且在文档流中的元素">
+<meta property="og:updated_time" content="2016-07-18T13:20:10.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript用正则表达式解析ulr值">
-<meta name="twitter:description" content="1234567891011121314151617181920var url = &apos;http://dumuzhou.github.io/index.html?name=dy&amp;amp;age=26#comment&apos;;var arr = url.match(/(https?:)\/\/([^\/]+)(\/[^\?]*)?(\?[^#]*)?(#.*)?/);var protocol = arr[1]">
+<meta name="twitter:title" content="css之flex弹性布局">
+<meta name="twitter:description" content="弹性容器1display: flex;
+弹性元素1父级为display: flex 且在文档流中的元素">
   
     <link rel="alternative" href="/atom.xml" title="分享互联网" type="application/atom+xml">
   
@@ -107,7 +110,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/js-RegExp/" style="font-size: 10px;">js RegExp</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a>
+						<a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a>
 					</div>
 				</section>
 				
@@ -173,11 +176,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-javascript-url" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-css3-flex" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/15/javascript-url/" class="article-date">
-  	<time datetime="2016-07-15T07:50:12.213Z" itemprop="datePublished">2016-07-15</time>
+      <a href="/2016/07/18/css3-flex/" class="article-date">
+  	<time datetime="2016-07-18T13:20:10.430Z" itemprop="datePublished">2016-07-18</time>
 </a>
     </div>
   
@@ -190,7 +193,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      javascript用正则表达式解析ulr值
+      css之flex弹性布局
     </h1>
   
 
@@ -199,7 +202,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-RegExp/">js RegExp</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flex/">flex</a></li></ul>
 	</div>
 
         
@@ -210,7 +213,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url = <span class="string">'http://dumuzhou.github.io/index.html?name=dy&amp;age=26#comment'</span>;</span><br><span class="line"><span class="keyword">var</span> arr = url.match(<span class="regexp">/(https?:)\/\/([^\/]+)(\/[^\?]*)?(\?[^#]*)?(#.*)?/</span>);</span><br><span class="line"><span class="keyword">var</span> protocol = arr[<span class="number">1</span>];  <span class="comment">// 协议 </span></span><br><span class="line"><span class="keyword">var</span> host = arr[<span class="number">2</span>];      <span class="comment">// 主机</span></span><br><span class="line"><span class="keyword">var</span> pathname = arr[<span class="number">3</span>];  <span class="comment">// 路径</span></span><br><span class="line"><span class="keyword">var</span> search = arr[<span class="number">4</span>];    <span class="comment">// 查询</span></span><br><span class="line"><span class="keyword">var</span> hash = arr[<span class="number">5</span>];      <span class="comment">// 哈希值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUrlHref</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(search)&#123;</span><br><span class="line">		<span class="keyword">var</span> str=search.replace(<span class="string">"?"</span>,<span class="string">""</span>);</span><br><span class="line">		<span class="keyword">var</span> oArr=str.split(<span class="string">"&amp;"</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> a <span class="keyword">in</span> oArr)&#123;</span><br><span class="line">			<span class="keyword">var</span> s=oArr[a].split(<span class="string">"="</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[<span class="number">0</span>]==x)&#123;</span><br><span class="line">				<span class="keyword">return</span> s[<span class="number">1</span>];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getUrlHref(<span class="string">"age"</span>));</span><br></pre></td></tr></table></figure>
+        <h2 id="弹性容器"><a href="#弹性容器" class="headerlink" title="弹性容器"></a>弹性容器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: flex;</span><br></pre></td></tr></table></figure>
+<h2 id="弹性元素"><a href="#弹性元素" class="headerlink" title="弹性元素"></a>弹性元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父级为display: flex 且在文档流中的元素</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方向</span></span><br><span class="line">flex-direction: row / row-reverse / column / column-reverse <span class="comment">// 左右（默认）/右左/上下/下上</span></span><br><span class="line"><span class="comment">// 换行</span></span><br><span class="line">flex-wrap: nowrap / wrap / wrap-reverse  <span class="comment">// 不换行（默认）/换行/反向换行</span></span><br><span class="line"><span class="comment">// 简写</span></span><br><span class="line">flex-flow: flex-direction flex-wrap;</span><br><span class="line"><span class="comment">// 顺序</span></span><br><span class="line">order: <span class="number">0</span> / <span class="number">1</span> / <span class="number">2</span>; <span class="comment">// 大的在后面</span></span><br><span class="line"><span class="comment">// 分配剩余宽度的比例</span></span><br><span class="line">flex-grow: <span class="number">0</span> / <span class="number">1</span> / <span class="number">2</span>; <span class="comment">// 默认0</span></span><br><span class="line"><span class="comment">// 剩余空间为负数时分配比例</span></span><br><span class="line">flex-shrink: <span class="number">1</span>; <span class="comment">// 默认平局分配</span></span><br><span class="line">flex-basis: <span class="number">100</span>px;  <span class="comment">// 初始宽/高</span></span><br><span class="line"><span class="comment">// 简写</span></span><br><span class="line">flex: flex-grow flex-shrink flex-basis;</span><br><span class="line"><span class="comment">// 对齐方式</span></span><br><span class="line">justify-content: flex-start / flex-end / center / space-between / space-around <span class="comment">// 开始/结束/居中/间隔平分/两边参与平分</span></span><br><span class="line"><span class="comment">// x/y轴对齐</span></span><br><span class="line">align-items: flex-start / flex-end / center / baseline /stretch <span class="comment">// 顶部/底部/居中/基线/拉伸</span></span><br><span class="line"><span class="comment">// 弹性元素对齐方式</span></span><br><span class="line">align-self: auto / flex-start / flex-end / center / baseline / stretch <span class="comment">// 继承父级/顶部/底部/居中/基线/拉伸</span></span><br><span class="line"><span class="comment">// 多行对齐方式</span></span><br><span class="line">align-content: flex-start / flex-end / center / space-between / space-around / stretch <span class="comment">// 顶部/底部/居中/间隔平分/两边参与平分/拉伸</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -220,18 +226,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/07/15/css3-animate/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          css3变形和动画
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/07/15/javascript-type/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript中的数据类型</div>
+    <a href="/2016/07/18/javascript-url/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript用正则表达式解析ulr值</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -266,7 +263,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="javascript-url" data-title="javascript用正则表达式解析ulr值" data-url="http://yoursite.com/2016/07/15/javascript-url/"></div>
+	<div class="ds-thread" data-thread-key="css3-flex" data-title="css之flex弹性布局" data-url="http://yoursite.com/2016/07/18/css3-flex/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
