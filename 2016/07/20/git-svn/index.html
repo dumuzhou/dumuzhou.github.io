@@ -4,21 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>css之flex弹性布局 | 分享互联网</title>
+  <title>linux下svn、git服务器和本地目录文件同步 | 分享互联网</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="弹性容器1display: flex;
-弹性元素1父级为display: flex 且在文档流中的元素">
+  <meta name="description" content="windows下提交svn多方便，commit&amp;gt;打钩&amp;gt;Ok就可以了那么在linux下可不可以实现自动同步目录呢">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css之flex弹性布局">
-<meta property="og:url" content="http://yoursite.com/2016/07/18/css3-flex/index.html">
+<meta property="og:title" content="linux下svn、git服务器和本地目录文件同步">
+<meta property="og:url" content="http://yoursite.com/2016/07/20/git-svn/index.html">
 <meta property="og:site_name" content="分享互联网">
-<meta property="og:description" content="弹性容器1display: flex;
-弹性元素1父级为display: flex 且在文档流中的元素">
-<meta property="og:updated_time" content="2016-07-18T13:20:10.430Z">
+<meta property="og:description" content="windows下提交svn多方便，commit&amp;gt;打钩&amp;gt;Ok就可以了那么在linux下可不可以实现自动同步目录呢">
+<meta property="og:updated_time" content="2016-07-20T07:02:38.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css之flex弹性布局">
-<meta name="twitter:description" content="弹性容器1display: flex;
-弹性元素1父级为display: flex 且在文档流中的元素">
+<meta name="twitter:title" content="linux下svn、git服务器和本地目录文件同步">
+<meta name="twitter:description" content="windows下提交svn多方便，commit&amp;gt;打钩&amp;gt;Ok就可以了那么在linux下可不可以实现自动同步目录呢">
   
     <link rel="alternative" href="/atom.xml" title="分享互联网" type="application/atom+xml">
   
@@ -176,11 +173,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-css3-flex" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-git-svn" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/18/css3-flex/" class="article-date">
-  	<time datetime="2016-07-18T13:20:10.430Z" itemprop="datePublished">2016-07-18</time>
+      <a href="/2016/07/20/git-svn/" class="article-date">
+  	<time datetime="2016-07-20T07:02:38.355Z" itemprop="datePublished">2016-07-20</time>
 </a>
     </div>
   
@@ -193,7 +190,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css之flex弹性布局
+      linux下svn、git服务器和本地目录文件同步
     </h1>
   
 
@@ -202,7 +199,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flex/">flex</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
 	</div>
 
         
@@ -213,10 +210,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="弹性容器"><a href="#弹性容器" class="headerlink" title="弹性容器"></a>弹性容器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: flex;</span><br></pre></td></tr></table></figure>
-<h2 id="弹性元素"><a href="#弹性元素" class="headerlink" title="弹性元素"></a>弹性元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父级为display: flex 且在文档流中的元素</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方向</span></span><br><span class="line">flex-direction: row / row-reverse / column / column-reverse <span class="comment">// 左右（默认）/右左/上下/下上</span></span><br><span class="line"><span class="comment">// 换行</span></span><br><span class="line">flex-wrap: nowrap / wrap / wrap-reverse  <span class="comment">// 不换行（默认）/换行/反向换行</span></span><br><span class="line"><span class="comment">// 简写</span></span><br><span class="line">flex-flow: flex-direction flex-wrap;</span><br><span class="line"><span class="comment">// 顺序</span></span><br><span class="line">order: <span class="number">0</span> / <span class="number">1</span> / <span class="number">2</span>; <span class="comment">// 大的在后面</span></span><br><span class="line"><span class="comment">// 分配剩余宽度的比例</span></span><br><span class="line">flex-grow: <span class="number">0</span> / <span class="number">1</span> / <span class="number">2</span>; <span class="comment">// 默认0</span></span><br><span class="line"><span class="comment">// 剩余空间为负数时分配比例</span></span><br><span class="line">flex-shrink: <span class="number">1</span>; <span class="comment">// 默认平局分配</span></span><br><span class="line">flex-basis: <span class="number">100</span>px;  <span class="comment">// 初始宽/高</span></span><br><span class="line"><span class="comment">// 简写</span></span><br><span class="line">flex: flex-grow flex-shrink flex-basis;</span><br><span class="line"><span class="comment">// 对齐方式</span></span><br><span class="line">justify-content: flex-start / flex-end / center / space-between / space-around <span class="comment">// 开始/结束/居中/间隔平分/两边参与平分</span></span><br><span class="line"><span class="comment">// x/y轴对齐</span></span><br><span class="line">align-items: flex-start / flex-end / center / baseline /stretch <span class="comment">// 顶部/底部/居中/基线/拉伸</span></span><br><span class="line"><span class="comment">// 弹性元素对齐方式</span></span><br><span class="line">align-self: auto / flex-start / flex-end / center / baseline / stretch <span class="comment">// 继承父级/顶部/底部/居中/基线/拉伸</span></span><br><span class="line"><span class="comment">// 多行对齐方式</span></span><br><span class="line">align-content: flex-start / flex-end / center / space-between / space-around / stretch <span class="comment">// 顶部/底部/居中/间隔平分/两边参与平分/拉伸</span></span><br></pre></td></tr></table></figure>
+        <p>windows下提交svn多方便，commit&gt;打钩&gt;Ok就可以了<br>那么在linux下可不可以实现自动同步目录呢<br><a id="more"></a><br>要实现同步本地目录无非是三个条件</p>
+<ul>
+<li>删除本地不存在而服务器上存在的文件</li>
+<li>添加新文件</li>
+<li>提交</li>
+</ul>
+<p>这里用bash脚本实现</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="comment"># 删除文件</span></span><br><span class="line">svn status | <span class="keyword">grep</span> <span class="string">"!"</span> | awk <span class="string">'&#123;print $2&#125;'</span> | <span class="keyword">while</span> <span class="keyword">read</span> line;<span class="keyword">do</span> svn <span class="keyword">delete</span> $&#123;line&#125;;done;</span><br><span class="line"><span class="comment"># 添加新文件</span></span><br><span class="line">svn status | <span class="keyword">grep</span> <span class="string">"?"</span> | awk <span class="string">'&#123;print $2&#125;'</span> | <span class="keyword">while</span> <span class="keyword">read</span> line;<span class="keyword">do</span> svn add $&#123;line&#125;;done;</span><br><span class="line"><span class="comment"># 提交</span></span><br><span class="line">svn commit -<span class="keyword">m</span> <span class="string">'auto'</span></span><br></pre></td></tr></table></figure>
+<p>同理可得git</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="comment"># 删除文件</span></span><br><span class="line">git status -<span class="keyword">s</span> | <span class="keyword">grep</span> <span class="string">"D"</span> | awk <span class="string">'&#123;print $2&#125;'</span> | <span class="keyword">while</span> <span class="keyword">read</span> line;<span class="keyword">do</span> git rm --cached $&#123;line&#125;;done;</span><br><span class="line"><span class="comment"># 添加新文件</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 提交</span></span><br><span class="line">git commit -<span class="keyword">m</span> <span class="string">'auto'</span></span><br><span class="line">git <span class="keyword">push</span> -u origin master</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -226,18 +229,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/07/20/javascript-event/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          js事件及兼容写法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/07/18/javascript-url/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript用正则表达式解析ulr值</div>
+    <a href="/2016/07/20/javascript-event/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js事件及兼容写法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -272,7 +266,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="css3-flex" data-title="css之flex弹性布局" data-url="http://yoursite.com/2016/07/18/css3-flex/"></div>
+	<div class="ds-thread" data-thread-key="git-svn" data-title="linux下svn、git服务器和本地目录文件同步" data-url="http://yoursite.com/2016/07/20/git-svn/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
