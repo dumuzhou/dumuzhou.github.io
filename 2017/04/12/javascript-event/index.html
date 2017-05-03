@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>分享互联网</title>
+  <title>js事件及兼容写法 | 分享互联网</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="layout: categoriestitle: categories">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分享互联网">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="事件的操作分为注册、主动触发、取消 事件的三个阶段为捕获、目标、冒泡，低版本IE不支持捕获。  先看一下为什么要注册事件">
+<meta name="keywords" content="js,event">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js事件及兼容写法">
+<meta property="og:url" content="http://yoursite.com/2017/04/12/javascript-event/index.html">
 <meta property="og:site_name" content="分享互联网">
-<meta property="og:description" content="layout: categoriestitle: categories">
-<meta property="og:updated_time" content="2017-04-11T20:18:15.783Z">
+<meta property="og:description" content="事件的操作分为注册、主动触发、取消 事件的三个阶段为捕获、目标、冒泡，低版本IE不支持捕获。  先看一下为什么要注册事件">
+<meta property="og:updated_time" content="2017-04-11T20:18:15.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分享互联网">
-<meta name="twitter:description" content="layout: categoriestitle: categories">
+<meta name="twitter:title" content="js事件及兼容写法">
+<meta name="twitter:description" content="事件的操作分为注册、主动触发、取消 事件的三个阶段为捕获、目标、冒泡，低版本IE不支持捕获。  先看一下为什么要注册事件">
   
     <link rel="alternative" href="/atom.xml" title="分享互联网" type="application/atom+xml">
   
@@ -153,12 +154,45 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-javascript-event" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js事件及兼容写法
+    </h1>
+  
+
+        
+        <a href="/2017/04/12/javascript-event/" class="archive-article-date">
+  	<time datetime="2017-04-11T20:18:15.773Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>layout: categories<br>title: categories</p>
+        <h2 id="事件的操作分为注册、主动触发、取消"><a href="#事件的操作分为注册、主动触发、取消" class="headerlink" title="事件的操作分为注册、主动触发、取消"></a>事件的操作分为注册、主动触发、取消</h2><blockquote>
+<p>事件的三个阶段为捕获、目标、冒泡，低版本IE不支持捕获。</p>
+</blockquote>
+<p>先看一下为什么要注册事件</p>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'html'</span>)[<span class="number">0</span>].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     alert(<span class="string">"html"</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'html'</span>)[<span class="number">0</span>].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     alert(<span class="string">"html1"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 当点击页面时只弹出了html1,如果我们需要html和html1都弹出就要用到事件注册了。</span></div></pre></td></tr></table></figure>
+<p>事件注册</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> addEvent = <span class="function"><span class="keyword">function</span>(<span class="params">element, type, listener</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (element.addEventListener) &#123;</div><div class="line">        element.addEventListener(type, listener, <span class="literal">false</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// 兼容ie6-7-8</span></div><div class="line">        element.attachEvent(<span class="string">'on'</span> + type, listener);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>事件触发</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fireEvent = <span class="function"><span class="keyword">function</span>(<span class="params">element, event</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (element.dispatchEvent) &#123;</div><div class="line">        <span class="keyword">var</span> evt = <span class="built_in">document</span>.createEvent(<span class="string">'HTMLEvents'</span>);</div><div class="line">        <span class="comment">// initEvent接受3个参数：</span></div><div class="line">        <span class="comment">// 事件类型，是否冒泡，是否阻止浏览器的默认行为</span></div><div class="line">        evt.initEvent(event, <span class="literal">true</span>, <span class="literal">false</span>);</div><div class="line">        <span class="keyword">return</span> !element.dispatchEvent(evt);</div><div class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">//兼容ie6-7-8</span></div><div class="line">        <span class="keyword">var</span> evt = <span class="built_in">document</span>.createEventObject();</div><div class="line">        <span class="comment">// IE浏览器支持fireEvent方法</span></div><div class="line">        <span class="keyword">return</span> element.fireEvent(<span class="string">'on'</span> + event, evt)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>事件取消</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> removeEvent = <span class="function"><span class="keyword">function</span>(<span class="params">element, type, listener</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (element.removeEventListener) &#123;</div><div class="line">        element.removeEventListener(type, listener, <span class="literal">false</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// 兼容ie6-7-8</span></div><div class="line">        element.detachEvent(<span class="string">'on'</span> + type, listener);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>阻止冒泡</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'html'</span>)[<span class="number">0</span>].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     alert(<span class="string">"html"</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>].onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">     alert(<span class="string">"body"</span>);</div><div class="line">    <span class="keyword">if</span> (e &amp;&amp; e.stopPropagation) &#123;</div><div class="line">        e.stopPropagation();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">window</span>.event.cancelBubble = <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 点击页面不会弹出html</span></div></pre></td></tr></table></figure>
+<p>阻止浏览器默认行为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'a'</span>)[<span class="number">0</span>].onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (e &amp;&amp; e.preventDefault) &#123;</div><div class="line">        e.preventDefault();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">window</span>.event.returnValue = <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 这时点击页面上第一个a链接不会跳转</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>jquery中return false阻止冒泡和浏览器默认行为</p>
+</blockquote>
 
       
 
@@ -198,6 +232,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">event</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -248,7 +297,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/categories/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/12/javascript-event/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -260,6 +309,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/04/12/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ubuntu搭建svn服务
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/12/javascript-type/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript中的数据类型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -292,7 +360,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

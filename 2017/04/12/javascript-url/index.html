@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>分享互联网</title>
+  <title>javascript用正则表达式解析ulr值 | 分享互联网</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="layout: categoriestitle: categories">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分享互联网">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="1234567891011121314151617181920var url = &apos;http://dumuzhou.github.io/index.html?name=dy&amp;amp;age=26#comment&apos;;var arr = url.match(/(https?:)\/\/([^\/]+)(\/[^\?]*)?(\?[^#]*)?(#.*)?/);var protocol = arr[1]">
+<meta name="keywords" content="js,RegExp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript用正则表达式解析ulr值">
+<meta property="og:url" content="http://yoursite.com/2017/04/12/javascript-url/index.html">
 <meta property="og:site_name" content="分享互联网">
-<meta property="og:description" content="layout: categoriestitle: categories">
-<meta property="og:updated_time" content="2017-04-11T20:18:15.783Z">
+<meta property="og:description" content="1234567891011121314151617181920var url = &apos;http://dumuzhou.github.io/index.html?name=dy&amp;amp;age=26#comment&apos;;var arr = url.match(/(https?:)\/\/([^\/]+)(\/[^\?]*)?(\?[^#]*)?(#.*)?/);var protocol = arr[1]">
+<meta property="og:updated_time" content="2017-04-11T20:18:15.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分享互联网">
-<meta name="twitter:description" content="layout: categoriestitle: categories">
+<meta name="twitter:title" content="javascript用正则表达式解析ulr值">
+<meta name="twitter:description" content="1234567891011121314151617181920var url = &apos;http://dumuzhou.github.io/index.html?name=dy&amp;amp;age=26#comment&apos;;var arr = url.match(/(https?:)\/\/([^\/]+)(\/[^\?]*)?(\?[^#]*)?(#.*)?/);var protocol = arr[1]">
   
     <link rel="alternative" href="/atom.xml" title="分享互联网" type="application/atom+xml">
   
@@ -153,12 +154,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-javascript-url" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript用正则表达式解析ulr值
+    </h1>
+  
+
+        
+        <a href="/2017/04/12/javascript-url/" class="archive-article-date">
+  	<time datetime="2017-04-11T20:18:15.773Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>layout: categories<br>title: categories</p>
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> url = <span class="string">'http://dumuzhou.github.io/index.html?name=dy&amp;age=26#comment'</span>;</div><div class="line"><span class="keyword">var</span> arr = url.match(<span class="regexp">/(https?:)\/\/([^\/]+)(\/[^\?]*)?(\?[^#]*)?(#.*)?/</span>);</div><div class="line"><span class="keyword">var</span> protocol = arr[<span class="number">1</span>];  <span class="comment">// 协议 </span></div><div class="line"><span class="keyword">var</span> host = arr[<span class="number">2</span>];      <span class="comment">// 主机</span></div><div class="line"><span class="keyword">var</span> pathname = arr[<span class="number">3</span>];  <span class="comment">// 路径</span></div><div class="line"><span class="keyword">var</span> search = arr[<span class="number">4</span>];    <span class="comment">// 查询</span></div><div class="line"><span class="keyword">var</span> hash = arr[<span class="number">5</span>];      <span class="comment">// 哈希值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUrlHref</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(search)&#123;</div><div class="line">		<span class="keyword">var</span> str=search.replace(<span class="string">"?"</span>,<span class="string">""</span>);</div><div class="line">		<span class="keyword">var</span> oArr=str.split(<span class="string">"&amp;"</span>);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> a <span class="keyword">in</span> oArr)&#123;</div><div class="line">			<span class="keyword">var</span> s=oArr[a].split(<span class="string">"="</span>);</div><div class="line">			<span class="keyword">if</span>(s[<span class="number">0</span>]==x)&#123;</div><div class="line">				<span class="keyword">return</span> s[<span class="number">1</span>];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(getUrlHref(<span class="string">"age"</span>));</div></pre></td></tr></table></figure>
 
       
 
@@ -198,6 +214,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">RegExp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -248,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/categories/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/12/javascript-url/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -260,6 +291,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/04/12/javascript-type/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          javascript中的数据类型
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 
 
@@ -292,7 +337,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

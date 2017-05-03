@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>分享互联网</title>
+  <title>css之flex弹性布局 | 分享互联网</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="layout: categoriestitle: categories">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分享互联网">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="弹性容器1display: flex; 弹性元素1父级为display: flex 且在文档流中的元素">
+<meta name="keywords" content="flex,css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css之flex弹性布局">
+<meta property="og:url" content="http://yoursite.com/2017/04/12/css3-flex/index.html">
 <meta property="og:site_name" content="分享互联网">
-<meta property="og:description" content="layout: categoriestitle: categories">
-<meta property="og:updated_time" content="2017-04-11T20:18:15.783Z">
+<meta property="og:description" content="弹性容器1display: flex; 弹性元素1父级为display: flex 且在文档流中的元素">
+<meta property="og:updated_time" content="2017-04-11T20:18:15.753Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分享互联网">
-<meta name="twitter:description" content="layout: categoriestitle: categories">
+<meta name="twitter:title" content="css之flex弹性布局">
+<meta name="twitter:description" content="弹性容器1display: flex; 弹性元素1父级为display: flex 且在文档流中的元素">
   
     <link rel="alternative" href="/atom.xml" title="分享互联网" type="application/atom+xml">
   
@@ -153,12 +154,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-css3-flex" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css之flex弹性布局
+    </h1>
+  
+
+        
+        <a href="/2017/04/12/css3-flex/" class="archive-article-date">
+  	<time datetime="2017-04-11T20:18:15.753Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>layout: categories<br>title: categories</p>
+        <h2 id="弹性容器"><a href="#弹性容器" class="headerlink" title="弹性容器"></a>弹性容器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">display: flex;</div></pre></td></tr></table></figure>
+<h2 id="弹性元素"><a href="#弹性元素" class="headerlink" title="弹性元素"></a>弹性元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">父级为display: flex 且在文档流中的元素</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 方向</span></div><div class="line">flex-direction: row / row-reverse / column / column-reverse <span class="comment">// 左右（默认）/右左/上下/下上</span></div><div class="line"><span class="comment">// 换行</span></div><div class="line">flex-wrap: nowrap / wrap / wrap-reverse  <span class="comment">// 不换行（默认）/换行/反向换行</span></div><div class="line"><span class="comment">// 简写</span></div><div class="line">flex-flow: flex-direction flex-wrap;</div><div class="line"><span class="comment">// 顺序</span></div><div class="line">order: <span class="number">0</span> / <span class="number">1</span> / <span class="number">2</span>; <span class="comment">// 大的在后面</span></div><div class="line"><span class="comment">// 分配剩余宽度的比例</span></div><div class="line">flex-grow: <span class="number">0</span> / <span class="number">1</span> / <span class="number">2</span>; <span class="comment">// 默认0</span></div><div class="line"><span class="comment">// 剩余空间为负数时分配比例</span></div><div class="line">flex-shrink: <span class="number">1</span>; <span class="comment">// 默认平局分配</span></div><div class="line">flex-basis: <span class="number">100</span>px;  <span class="comment">// 初始宽/高</span></div><div class="line"><span class="comment">// 简写</span></div><div class="line">flex: flex-grow flex-shrink flex-basis;</div><div class="line"><span class="comment">// 对齐方式</span></div><div class="line">justify-content: flex-start / flex-end / center / space-between / space-around <span class="comment">// 开始/结束/居中/间隔平分/两边参与平分</span></div><div class="line"><span class="comment">// x/y轴对齐</span></div><div class="line">align-items: flex-start / flex-end / center / baseline /stretch <span class="comment">// 顶部/底部/居中/基线/拉伸</span></div><div class="line"><span class="comment">// 弹性元素对齐方式</span></div><div class="line">align-self: auto / flex-start / flex-end / center / baseline / stretch <span class="comment">// 继承父级/顶部/底部/居中/基线/拉伸</span></div><div class="line"><span class="comment">// 多行对齐方式</span></div><div class="line">align-content: flex-start / flex-end / center / space-between / space-around / stretch <span class="comment">// 顶部/底部/居中/间隔平分/两边参与平分/拉伸</span></div></pre></td></tr></table></figure>
 
       
 
@@ -198,6 +217,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">flex</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -248,7 +282,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/categories/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/12/css3-flex/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -260,6 +294,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/04/12/css3-animate/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          css3变形和动画
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/12/git-svn/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">linux下svn、git服务器和本地目录文件同步</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -292,7 +345,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

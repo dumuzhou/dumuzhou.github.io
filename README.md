@@ -1,3 +1,3 @@
 
 
-[blog1](http://dumuzhou.github.io/)
+[blog](http://dumuzhou.github.io/)

@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>分享互联网</title>
+  <title>ubuntu搭建svn服务 | 分享互联网</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="layout: categoriestitle: categories">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分享互联网">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="安装 1apt-get install -y subversion 创建目录 1mkdir /svn 创建一个新的空版本库 1svnadmin create /svn">
+<meta name="keywords" content="tools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu搭建svn服务">
+<meta property="og:url" content="http://yoursite.com/2017/04/12/hello-world/index.html">
 <meta property="og:site_name" content="分享互联网">
-<meta property="og:description" content="layout: categoriestitle: categories">
-<meta property="og:updated_time" content="2017-04-11T20:18:15.783Z">
+<meta property="og:description" content="安装 1apt-get install -y subversion 创建目录 1mkdir /svn 创建一个新的空版本库 1svnadmin create /svn">
+<meta property="og:updated_time" content="2017-04-11T20:18:15.763Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分享互联网">
-<meta name="twitter:description" content="layout: categoriestitle: categories">
+<meta name="twitter:title" content="ubuntu搭建svn服务">
+<meta name="twitter:description" content="安装 1apt-get install -y subversion 创建目录 1mkdir /svn 创建一个新的空版本库 1svnadmin create /svn">
   
     <link rel="alternative" href="/atom.xml" title="分享互联网" type="application/atom+xml">
   
@@ -153,12 +154,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ubuntu搭建svn服务
+    </h1>
+  
+
+        
+        <a href="/2017/04/12/hello-world/" class="archive-article-date">
+  	<time datetime="2017-04-11T20:18:15.763Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>layout: categories<br>title: categories</p>
+        <p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install -y subversion</div></pre></td></tr></table></figure>
+<p>创建目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /svn</div></pre></td></tr></table></figure>
+<p>创建一个新的空版本库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svnadmin create /svn</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>创建用户和密码:vim /svn/conf/passwd</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[users]</div><div class="line"><span class="comment"># harry = harryssecret</span></div><div class="line"><span class="comment"># sally = sallyssecret</span></div><div class="line">user = admin</div></pre></td></tr></table></figure>
+<p>设置用户权限: vim /svn/conf/authz</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># [/foo/bar]</span></div><div class="line"><span class="comment"># harry = rw</span></div><div class="line"><span class="comment"># &amp;joe = r</span></div><div class="line"><span class="comment"># * =</span></div><div class="line">[<span class="regexp">/]</span></div><div class="line">user=rw</div></pre></td></tr></table></figure>
+<p>设置访问权限: vim /svn/conf/svnserve.conf</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">anon-access = none  <span class="comment"># 改为 none</span></div><div class="line">auth-access = <span class="keyword">write</span>  <span class="comment"># 开启</span></div><div class="line"><span class="comment">### The password-db option controls the location of the password</span></div><div class="line"><span class="comment">### database file.  Unless you specify a path starting with a /,</span></div><div class="line"><span class="comment">### the file's location is relative to the directory containing</span></div><div class="line"><span class="comment">### this configuration file.</span></div><div class="line"><span class="comment">### If SASL is enabled (see below), this file will NOT be used.</span></div><div class="line"><span class="comment">### Uncomment the line below to use the default password file.</span></div><div class="line">password-db = passwd <span class="comment"># 开启</span></div><div class="line"><span class="comment">### The authz-db option controls the location of the authorization</span></div><div class="line"><span class="comment">### rules for path-based access control.  Unless you specify a path</span></div><div class="line"><span class="comment">### starting with a /, the file's location is relative to the</span></div><div class="line"><span class="comment">### directory containing this file.  The specified path may be a</span></div><div class="line"><span class="comment">### repository relative URL (^/) or an absolute file:// URL to a text</span></div><div class="line"><span class="comment">### file in a Subversion repository.  If you don't specify an authz-db,</span></div><div class="line"><span class="comment">### no path-based access control is done.</span></div><div class="line"><span class="comment">### Uncomment the line below to use the default authorization file.</span></div><div class="line">authz-db = authz  <span class="comment"># 开启</span></div></pre></td></tr></table></figure>
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svnserve <span class="_">-d</span> -r /svn  <span class="comment"># 默认端口：3690</span></div></pre></td></tr></table></figure>
+<p>测试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn co svn://127.0.0.1  <span class="comment"># 输入账号密码提示取出版本0说明成功搭建</span></div></pre></td></tr></table></figure>
+<p>停止</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">killall svnserve</div></pre></td></tr></table></figure>
+<p>添加到开机启动: vim /etc/rc.local</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svnserve -d -r /svn</div><div class="line"><span class="keyword">exit</span> <span class="number">0</span></div></pre></td></tr></table></figure>
 
       
 
@@ -198,6 +234,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tools</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -248,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/categories/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/12/hello-world/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -260,6 +307,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/04/12/git-svn/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          linux下svn、git服务器和本地目录文件同步
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/12/javascript-event/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js事件及兼容写法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -292,7 +358,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>分享互联网</title>
+  <title>css3变形和动画 | 分享互联网</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="layout: categoriestitle: categories">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分享互联网">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="网页实现动画的几种方式 gif、flash、css3、js  gif动画一般是用在图标或图片上，不能实现复杂的动画flash以前用的多，现在几乎不用了js用setInterval实现动画，可以兼容低版本的ie浏览器css3动画流畅，性能较好">
+<meta name="keywords" content="css3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3变形和动画">
+<meta property="og:url" content="http://yoursite.com/2017/04/12/css3-animate/index.html">
 <meta property="og:site_name" content="分享互联网">
-<meta property="og:description" content="layout: categoriestitle: categories">
-<meta property="og:updated_time" content="2017-04-11T20:18:15.783Z">
+<meta property="og:description" content="网页实现动画的几种方式 gif、flash、css3、js  gif动画一般是用在图标或图片上，不能实现复杂的动画flash以前用的多，现在几乎不用了js用setInterval实现动画，可以兼容低版本的ie浏览器css3动画流畅，性能较好">
+<meta property="og:image" content="http://yoursite.com/images/animate.gif">
+<meta property="og:updated_time" content="2017-04-11T20:18:15.753Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分享互联网">
-<meta name="twitter:description" content="layout: categoriestitle: categories">
+<meta name="twitter:title" content="css3变形和动画">
+<meta name="twitter:description" content="网页实现动画的几种方式 gif、flash、css3、js  gif动画一般是用在图标或图片上，不能实现复杂的动画flash以前用的多，现在几乎不用了js用setInterval实现动画，可以兼容低版本的ie浏览器css3动画流畅，性能较好">
+<meta name="twitter:image" content="http://yoursite.com/images/animate.gif">
   
     <link rel="alternative" href="/atom.xml" title="分享互联网" type="application/atom+xml">
   
@@ -153,12 +156,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-css3-animate" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css3变形和动画
+    </h1>
+  
+
+        
+        <a href="/2017/04/12/css3-animate/" class="archive-article-date">
+  	<time datetime="2017-04-11T20:18:15.753Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>layout: categories<br>title: categories</p>
+        <h2 id="网页实现动画的几种方式"><a href="#网页实现动画的几种方式" class="headerlink" title="网页实现动画的几种方式"></a>网页实现动画的几种方式</h2><blockquote>
+<p>gif、flash、css3、js</p>
+</blockquote>
+<p>gif动画一般是用在图标或图片上，不能实现复杂的动画<br>flash以前用的多，现在几乎不用了<br>js用setInterval实现动画，可以兼容低版本的ie浏览器<br>css3动画流畅，性能较好</p>
+<a id="more"></a>
+<p>css动画很多是配合变形来实现比较炫的效果，我们首先看一下transform这个属性</p>
+<blockquote>
+<p>transform:rotate(30deg)              // 旋转<br>transform:translate(100%,50px)       // 偏移<br>transform:scale(1.2)                 // 缩放<br>transform:skew(30deg)                // 倾斜<br>transform:matrix(a,b,c,d,e,f)        // 矩阵<br>// 还可以取值 scale3d scaleX scaleY scaleZ 以此类推<br>transform-origin:center center;      // 参考点 默认中心<br>transform-style:flat/presever-3d     // 扁平和3d效果<br>perspective: 200px;                  // 透视距离<br>perspective-origin: 0 0;             // 透视角度 默认中心<br>backface-visibility:visible/hidden;  // 背景默认可见</p>
+</blockquote>
+<h2 id="transtion过渡动画"><a href="#transtion过渡动画" class="headerlink" title="transtion过渡动画"></a>transtion过渡动画</h2><blockquote>
+<p>transition-property:none/left/all;       // 哪个属性可以过渡<br>transition-duration: 2s;                 // 过渡时间<br>transition-timing-function:ease/linear/ease-in/ease-out/ease-in-out;<br>// 过渡速度 两头慢 默认值/匀速/变快/变慢/两头慢 和第一个相比明显一些<br>transiton-delay:2s;                      // 过渡等待时间<br>transiton:all 2s linear 2s;              // 简写</p>
+</blockquote>
+<p>transition动画的有几下几个缺点</p>
+<ul>
+<li>只能设置开始和结束连个关键帧</li>
+<li>需要主动触发 hover或者添加class</li>
+<li>不能设置动画次数</li>
+</ul>
+<h2 id="animation就是用来解决以上问题的"><a href="#animation就是用来解决以上问题的" class="headerlink" title="animation就是用来解决以上问题的"></a>animation就是用来解决以上问题的</h2><blockquote>
+<p>animation-name: main;              // 动画别名<br>animation-duration:2s;             // 动画时间<br>animation-timing-function:;          // 动画速度 同transiton-timing-function<br>animation-delay:2s;                // 动画等待时间<br>animation-iteration-count:1;       // 动画次数 infinite 循环动画 默认一次<br>animation-delay:normal/reverse/alternate/altername-reverse;<br>// 动画方向/反方向/往返反向/反往返方向<br>animation-fill-mode:none/backwords/forwords/both;<br>// botn保留动画开始和结束的状态<br>animate-paly-state:paused/running; // 暂停或开始动画<br>animate:main 2s linear 2s;         // 简写<br>@keyframes main {                  // 定义main动画<br>    0% {}<br>    50% {}<br>    100% {}<br>}</p>
+</blockquote>
+<p>看一下用animation实现的正圆运动</p>
+<p><img src="/images/animate.gif" alt=""></p>
+<p>代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOTYPE html&gt;</div><div class="line">&lt;html lang="en"&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">	     &lt;meta charset="UTF-8"&gt;</div><div class="line">	     &lt;title&gt;&lt;/title&gt;</div><div class="line">	     &lt;style&gt;</div><div class="line">	         .demo &#123;width:300px;height:300px;border-radius:300px;margin:80px auto;border:1px solid #000;position:relative;&#125;</div><div class="line">	         .par &#123;width:300px;height:300px;animation:main 4s linear infinite both;position:absolute;top:0;left:0;&#125;</div><div class="line">	         .chi &#123;width:50px;height:50px;background:red;border-radius:50px;&#125;</div><div class="line">	         @keyframes main &#123;</div><div class="line">		         0% &#123;transform:rotate(0deg);&#125;</div><div class="line">		         100% &#123;transform:rotate(360deg);&#125;</div><div class="line">	&#125;</div><div class="line">         &lt;/style&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">         &lt;div class="demo"&gt;</div><div class="line">	         &lt;div class="par"&gt;</div><div class="line">		         &lt;div class="chi"&gt;&lt;/div&gt;</div><div class="line">	         &lt;/div&gt;</div><div class="line">         &lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>中间加个太阳，再加金木水火土星，有自传有公转，是不是就可以做个太阳系了。</p>
 
       
 
@@ -198,6 +241,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">css3</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -248,7 +302,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/categories/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/12/css3-animate/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -260,6 +314,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/12/css3-flex/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css之flex弹性布局</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -292,7 +356,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
